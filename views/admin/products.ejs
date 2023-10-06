@@ -1,0 +1,44 @@
+<%- include('../includes/head.ejs') %>
+<!-- import the head html -->
+<style>
+  .flex-container {
+    display: flex;
+  }
+</style>
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <!-- import the the navigation bar-->
+
+  <main>
+    <h1>My Product</h1>
+    <p>List of all product...</p>
+    <% if(prods.length > 0) {%>
+    <!-- condition the arrary that have or not -->
+    <div class="flex-container">
+    <% for(let product of prods) {%>
+    <!-- loop the array. That given to the add-product -->
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title"><%=product.title %></h5>
+          <h5 class="card-title"><%=product.description %></h5>
+          <h5 class="card-title">$<%=product.price %></h5>
+          <h5 class="card-title"><%=product.imageUrl %></h5>
+          <img src="<%=product.imageUrl %>" alt="" />
+          <p class="card-text">Author</p>
+          <a href="/admin/edit-product/<%= product.id%>?edit=true">Edit</a>
+          <form action="/admin/delete-product" method="POST">
+            <input type="hidden" value="<%= product.id %>" name="productId">
+            <button type="submit">Delete</button>
+          </form>
+          
+        </div>
+      </div>
+    <% }%> <% } else {%>
+    <!-- if there is no array that output the not product-->
+    <h1>No product found!</h1>
+    <% } %>
+    </div>
+  </main>
+  <%- include('../includes/end.ejs') %>
+  <!-- import the end html -->
+</body>

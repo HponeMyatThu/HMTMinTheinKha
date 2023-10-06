@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %> <!-- import the head html -->
+<body>
+
+<%- include('../includes/navigation.ejs')%> <!-- import the navigation -->
+    <h1><%= product.title %></h1>
+    <hr>
+    <h1><%= product.id %></h1>
+    <hr>
+    <h1><%= product.description %></h1>
+    <hr>
+    <h1><%= product.imageUrl %></h1>
+    <hr>
+    <h1><%= pageTitle %></h1>
+
+    <%- include('./add-to-cart.ejs') %>
+
+<%- include('../includes/end.ejs') %> <!-- import the end html -->

@@ -1,0 +1,58 @@
+<%- include('../includes/head.ejs') %>
+<!-- import the head html -->
+<body>
+  <%- include('../includes/navigation.ejs')%>
+  <!-- import the navigation -->
+  <main>
+    <form action="/admin/add-product" method="POST">
+      <div class="container">
+        <div class="mb-3 mx-auto">
+          <label for="Addproduct" class="form-label">Add product</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3 mx-auto">
+          <label for="imageUrl" class="form-label">Image Url</label>
+          <input
+            type="text"
+            class="form-control"
+            id="imageUrl"
+            name="imageUrl"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3 mx-auto">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              type="text"
+              class="form-control"
+              id="description"
+              name="description"
+              aria-describedby="emailHelp"
+            ></textarea>
+          </div>
+          <div class="mb-3 mx-auto">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              name="price"
+              aria-describedby="emailHelp"
+              row="5"
+            />
+          </div>
+      </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      
+    </form>
+  </main>
+
+  <%- include('../includes/end.ejs') %>
+  <!-- import the end html -->
+</body>
